@@ -7,7 +7,7 @@ export let getHomePage = async (req, res) => {
     console.log(">>>> check mysql");
     console.log(results); // results contains rows returned by server
 
-    data = results.map((result) => result);
-    return res.render("index.ejs", { dataUser: JSON.stringify(data) });
+    // data = results.map((result) => result);
+    return res.render("index.ejs", { dataUser: results });
   });
 };
