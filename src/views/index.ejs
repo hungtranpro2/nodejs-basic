@@ -1,52 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nodejs basic</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
     <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
     </ul>
 
     <div>
+      <div class="w3-container">
+        <h2>List users Table</h2>
 
-        <div class="w3-container">
-            <h2>List users Table</h2>
-          
-            <table class="w3-table-all w3-hoverable">
-              <thead>
-                <tr class="w3-light-grey">
-                  <th>Id</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% for(let i=0; i < dataUser.length; i++) { %>
-                    <tr>
-                      <td><%= dataUser[i].id %></td>
-                      <td><%= dataUser[i].firstName %></td>
-                      <td><%= dataUser[i].lastName %></td>
-                      <td>
-                          <a href="/detail/user/<%= dataUser[i].id %>"><button type="button">Detail</button></a>
-                          <button type="button">Edit</button>
-                          <button type="button">Delete</button>
-                      </td>
-                    </tr>
-                 <% } %>
-              </tbody>
-              
-            </table>
+        <table class="w3-table-all w3-hoverable">
+          <thead>
+            <tr class="w3-light-grey">
+              <th>Id</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(let i=0; i < dataUser.length; i++) { %>
+            <tr>
+              <td><%= dataUser[i].id %></td>
+              <td><%= dataUser[i].firstName %></td>
+              <td><%= dataUser[i].lastName %></td>
+              <td>
+                <a href="/detail/user/<%= dataUser[i].id %>"
+                  ><button type="button">Detail</button></a
+                >
+                <button type="button">Edit</button>
+                <button type="button">Delete</button>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+      <form action="/create-new-user" method="POST">
+        <div class="create-user-container">
+          <div>Create a new user</div>
+          <div>
+            <label> First Name </label>
+            <input type="text" name="firstName" />
           </div>
+          <div>
+            <label> Last Name </label>
+            <input type="text" name="lastName" />
+          </div>
+          <div>
+            <label> Email: </label>
+            <input type="email" name="email" />
+          </div>
+          <div>
+            <label> AddressName </label>
+            <input type="text" name="address" />
+          </div>
+          <div>
+            <button type="submit" class="btn-submit">Submit</button>
+          </div>
+        </div>
+      </form>
     </div>
-</body>
+  </body>
 </html>

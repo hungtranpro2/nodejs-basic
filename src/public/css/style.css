@@ -25,3 +25,20 @@ li a:hover:not(.active) {
 .active {
   background-color: #04aa6d;
 }
+
+.create-user-container {
+  padding: 15px;
+  margin: 0 auto;
+  width: max-content;
+}
+
+.create-user-container label {
+  display: block;
+  font-weight: 700;
+}
+
+.create-user-container .btn-submit {
+  margin-top: 15px;
+  cursor: pointer;
+  text-align: center;
+}
